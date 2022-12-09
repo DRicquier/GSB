@@ -139,7 +139,7 @@ namespace GSB {
 
         private void FrmBase_FormClosing(object sender, FormClosingEventArgs e) {
            if(fermeture == 0) { 
-                Close();
+                e.Cancel = true;
         }
     }
 }

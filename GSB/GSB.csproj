@@ -76,12 +76,6 @@
     <Compile Include="FrmPraticienListe.Designer.cs">
       <DependentUpon>FrmPraticienListe.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmTest.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmTest.Designer.cs">
-      <DependentUpon>FrmTest.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmVisiteAjout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,9 +97,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPraticienListe.resx">
       <DependentUpon>FrmPraticienListe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmTest.resx">
-      <DependentUpon>FrmTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmVisiteAjout.resx">
       <DependentUpon>FrmVisiteAjout.cs</DependentUpon>
