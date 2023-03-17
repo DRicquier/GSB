@@ -39,6 +39,7 @@ namespace GSB
             this.btnAperçu = new System.Windows.Forms.Button();
             this.apercuXml2 = new System.Windows.Forms.PrintPreviewDialog();
             this.printXml = new System.Drawing.Printing.PrintDocument();
+            this.choixImprimante = new System.Windows.Forms.PrintDialog();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgGsb)).BeginInit();
             this.SuspendLayout();
@@ -53,7 +54,7 @@ namespace GSB
             // 
             this.panel2.Controls.Add(this.imgGsb);
             this.panel2.Location = new System.Drawing.Point(22, 119);
-            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(386, 346);
             this.panel2.TabIndex = 13;
@@ -64,7 +65,7 @@ namespace GSB
             this.imgGsb.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.imgGsb.Dock = System.Windows.Forms.DockStyle.Fill;
             this.imgGsb.Location = new System.Drawing.Point(0, 0);
-            this.imgGsb.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgGsb.Margin = new System.Windows.Forms.Padding(2);
             this.imgGsb.Name = "imgGsb";
             this.imgGsb.Size = new System.Drawing.Size(386, 346);
             this.imgGsb.TabIndex = 13;
@@ -92,16 +93,16 @@ namespace GSB
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(620, 238);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(628, 165);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(182, 20);
             this.dateTimePicker1.TabIndex = 16;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(620, 162);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker2.Location = new System.Drawing.Point(628, 240);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(2);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(182, 20);
             this.dateTimePicker2.TabIndex = 17;
@@ -109,7 +110,7 @@ namespace GSB
             // btnAperçu
             // 
             this.btnAperçu.Location = new System.Drawing.Point(628, 324);
-            this.btnAperçu.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAperçu.Margin = new System.Windows.Forms.Padding(2);
             this.btnAperçu.Name = "btnAperçu";
             this.btnAperçu.Size = new System.Drawing.Size(130, 38);
             this.btnAperçu.TabIndex = 18;
@@ -131,6 +132,10 @@ namespace GSB
             // 
             this.printXml.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printXml_PrintPage);
             // 
+            // choixImprimante
+            // 
+            this.choixImprimante.UseEXDialog = true;
+            // 
             // FrmImpressionRendezVous
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -142,7 +147,7 @@ namespace GSB
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
-            this.Margin = new System.Windows.Forms.Padding(1, 1, 1, 1);
+            this.Margin = new System.Windows.Forms.Padding(1);
             this.Name = "FrmImpressionRendezVous";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmImpressionRendezVous";
@@ -172,5 +177,6 @@ namespace GSB
         private System.Windows.Forms.Button btnAperçu;
         private System.Windows.Forms.PrintPreviewDialog apercuXml2;
         private System.Drawing.Printing.PrintDocument printXml;
+        private System.Windows.Forms.PrintDialog choixImprimante;
     }
 }
