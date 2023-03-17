@@ -17,5 +17,8 @@ namespace lesClasses
         public TypePraticien(string id, string libelle)
          => (Id, Libelle) = (id, libelle);
         
+        public override string ToString() {
+            return Libelle;
+        }
     }
 }

@@ -5,11 +5,11 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0B4EA2AD-9DBC-4FF5-82FB-CEE684D3A218}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>GSB</RootNamespace>
     <AssemblyName>GSB</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -33,6 +33,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="MySql.Data, Version=8.0.31.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -52,11 +55,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FrmAjouterPraticien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjouterPraticien.Designer.cs">
+      <DependentUpon>FrmAjouterPraticien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmBase.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmBase.Designer.cs">
       <DependentUpon>FrmBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmBilanVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBilanVisite.Designer.cs">
+      <DependentUpon>FrmBilanVisite.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmConnexion.cs">
       <SubType>Form</SubType>
@@ -64,42 +79,93 @@
     <Compile Include="FrmConnexion.Designer.cs">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmFicheMedicament.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFicheMedicament.Designer.cs">
+      <DependentUpon>FrmFicheMedicament.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmImpressionRendezVous.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmImpressionRendezVous.Designer.cs">
+      <DependentUpon>FrmImpressionRendezVous.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmMenu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmMenu.Designer.cs">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPraticienListe.cs">
+    <Compile Include="FrmModifierPraticien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPraticienListe.Designer.cs">
-      <DependentUpon>FrmPraticienListe.cs</DependentUpon>
+    <Compile Include="FrmModifierPraticien.Designer.cs">
+      <DependentUpon>FrmModifierPraticien.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVisiteAjout.cs">
+    <Compile Include="FrmListePraticien.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmVisiteAjout.Designer.cs">
-      <DependentUpon>FrmVisiteAjout.cs</DependentUpon>
+    <Compile Include="FrmListePraticien.Designer.cs">
+      <DependentUpon>FrmListePraticien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmAjouterVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmAjouterVisite.Designer.cs">
+      <DependentUpon>FrmAjouterVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModifierVisite.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModifierVisite.Designer.cs">
+      <DependentUpon>FrmModifierVisite.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmVisites.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmVisites.Designer.cs">
+      <DependentUpon>FrmVisites.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Passerelle.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmAjouterPraticien.resx">
+      <DependentUpon>FrmAjouterPraticien.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmBase.resx">
       <DependentUpon>FrmBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBilanVisite.resx">
+      <DependentUpon>FrmBilanVisite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConnexion.resx">
       <DependentUpon>FrmConnexion.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmFicheMedicament.resx">
+      <DependentUpon>FrmFicheMedicament.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmImpressionRendezVous.resx">
+      <DependentUpon>FrmImpressionRendezVous.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmMenu.resx">
       <DependentUpon>FrmMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmPraticienListe.resx">
-      <DependentUpon>FrmPraticienListe.cs</DependentUpon>
+    <EmbeddedResource Include="FrmModifierPraticien.resx">
+      <DependentUpon>FrmModifierPraticien.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVisiteAjout.resx">
-      <DependentUpon>FrmVisiteAjout.cs</DependentUpon>
+    <EmbeddedResource Include="FrmListePraticien.resx">
+      <DependentUpon>FrmListePraticien.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmAjouterVisite.resx">
+      <DependentUpon>FrmAjouterVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModifierVisite.resx">
+      <DependentUpon>FrmModifierVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmVisites.resx">
+      <DependentUpon>FrmVisites.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

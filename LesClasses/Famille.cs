@@ -27,5 +27,8 @@ namespace lesClasses {
             lesMedicaments.Add(unMedicament);
         }
 
+        public override string ToString() {
+            return Libelle;
+        }
     }
 }

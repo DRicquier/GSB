@@ -9,14 +9,10 @@ using lesClasses;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
-
 namespace GSB {
     class Globale {
-
-
         // Données globales de l'application
-
-
+        
         // les données communes à tous les visiteurs
         public static SortedDictionary<string, Famille> lesFamilles = new SortedDictionary<string, Famille>();
         public static List<Medicament> lesMedicaments = new List<Medicament>();
@@ -34,9 +30,6 @@ namespace GSB {
 
         // nom à afficher dans le bas des formulaires
         public static string nomVisiteur;
-
     }
-
-
 }
 

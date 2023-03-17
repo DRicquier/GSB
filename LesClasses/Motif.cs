@@ -17,5 +17,8 @@ namespace lesClasses
         public Motif (int id, string libelle)
          => (Id, Libelle)  = (id, libelle);
 
+        public override string ToString() {
+            return Libelle;
+        }
     }
 }

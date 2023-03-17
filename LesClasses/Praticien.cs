@@ -14,9 +14,9 @@ namespace lesClasses {
 
         // Le tri par défaut d'un conteneur d'objets Praticien se fera sur le nom et le prénom
 
-        public int CompareTo(Praticien p) { 
-            // à corriger
-            return 0; 
+        public int CompareTo(Praticien other) {
+            int nom = string.Compare(Nom, other.Nom, StringComparison.Ordinal);
+            return nom == 0 ? nom : string.Compare(Prenom, other.Prenom, StringComparison.Ordinal);
         }
 
         // attribut
@@ -63,5 +63,8 @@ namespace lesClasses {
         // ajoute une visite concernant le praticien
         public void ajouteVisite(Visite v) => lesVisites.Add(v);
 
+        public override string ToString() {
+            return NomPrenom;
+        }
     }
 }

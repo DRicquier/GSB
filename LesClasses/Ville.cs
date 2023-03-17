@@ -19,6 +19,9 @@ namespace lesClasses
         // Propriétés automatiques
         public string Nom { get; set; }
         public string Code { get; set; }
-
+        
+        public override string ToString() {
+            return Nom;
+        }
     }
 }
