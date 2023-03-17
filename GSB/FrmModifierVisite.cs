@@ -167,5 +167,24 @@ namespace GSB
 
             MessageBox.Show(this, "Visite déplacée au " + date);
         }
+
+        private void btnSupp_Click(object sender, EventArgs e) {
+
+            // Aucune ligne sélectionnée
+            if (dgvVisites.SelectedRows.Count == 0) {
+                MessageBox.Show(this, "Vous devez sélectionner une visite !");
+                return;
+            }
+
+            // On récupère la premiere ligne sélectionnée
+            DataGridViewRow selectedRow = dgvVisites.SelectedRows[0];
+
+            // On récupère la première cell de la ligne
+            // Première cell (0) = id 
+            DataGridViewCell idCell = selectedRow.Cells[0];
+            int idVisite = (int)idCell.Value;
+
+            bool success = Passerelle.supprimerRendezVous(idVisite, out string message);
+        }
     }
 }

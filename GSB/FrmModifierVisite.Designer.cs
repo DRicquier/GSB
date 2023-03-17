@@ -39,6 +39,7 @@ namespace GSB
             this.dateEtHeureLabel = new System.Windows.Forms.Label();
             this.nomPrenomLabel = new System.Windows.Forms.Label();
             this.dgvVisites = new System.Windows.Forms.DataGridView();
+            this.btnSupp = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVisites)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +83,7 @@ namespace GSB
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.btnSupp);
             this.panel2.Controls.Add(this.dateEtHeure);
             this.panel2.Controls.Add(this.btnModifier);
             this.panel2.Controls.Add(this.label4);
@@ -167,6 +169,17 @@ namespace GSB
             this.dgvVisites.TabIndex = 16;
             this.dgvVisites.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onCellContentClick);
             // 
+            // btnSupp
+            // 
+            this.btnSupp.Location = new System.Drawing.Point(714, 267);
+            this.btnSupp.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSupp.Name = "btnSupp";
+            this.btnSupp.Size = new System.Drawing.Size(122, 27);
+            this.btnSupp.TabIndex = 23;
+            this.btnSupp.Text = "Supprimer";
+            this.btnSupp.UseVisualStyleBackColor = true;
+            this.btnSupp.Click += new System.EventHandler(this.btnSupp_Click);
+            // 
             // FrmModifierVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -200,5 +213,6 @@ namespace GSB
         private System.Windows.Forms.Label dateEtHeureLabel;
         private System.Windows.Forms.Label nomPrenomLabel;
         private System.Windows.Forms.DateTimePicker dateEtHeure;
+        private System.Windows.Forms.Button btnSupp;
     }
 }
