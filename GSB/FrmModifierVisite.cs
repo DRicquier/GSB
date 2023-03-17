@@ -22,6 +22,10 @@ namespace GSB
         {
             // On réinitialise les données
             dateEtHeure.Value = DateTime.Today;
+
+            // Pour afficher les heures en format 24h et non en format am/pm
+            dateEtHeure.Format = DateTimePickerFormat.Custom;
+            dateEtHeure.CustomFormat = "dd/MM/yyyy HH:mm";
             
             dgvVisites.ClearSelection();
             dgvVisites.Rows.Clear();

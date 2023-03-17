@@ -17,6 +17,10 @@ namespace GSB {
             lesPraticiens.Items.Clear();
             lesMotifs.Items.Clear();
             dateEtHeure.Value = DateTime.Today;
+            
+            // Pour afficher les heures en format 24h et non en format am/pm
+            dateEtHeure.Format = DateTimePickerFormat.Custom;
+            dateEtHeure.CustomFormat = "dd/MM/yyyy HH:mm";
 
             // Création des colonnes 
             dgvVisites.RowHeadersVisible = false;
@@ -83,7 +87,7 @@ namespace GSB {
             Motif motif = (Motif)lesMotifs.SelectedItem;
             DateTime date = dateEtHeure.Value;
 
-            int idVisite = Passerelle.ajouterRendezVous(praticien.Id, motif.Id, date, out var message);
+            int idVisite = Passerelle.ajouterRendezVous(praticien.Id, motif.Id, date, out string message);
 
             // Si le message est vide alors il n'y a pas eu d'erreur lors de l'ajout
             if (message.Length == 0) {

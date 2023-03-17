@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CheckUtils.cs" />
     <Compile Include="Ville.cs" />
     <Compile Include="Famille.cs" />
     <Compile Include="Medicament.cs" />

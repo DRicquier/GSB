@@ -121,11 +121,11 @@
     <Compile Include="FrmModifierVisite.Designer.cs">
       <DependentUpon>FrmModifierVisite.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmVisites.cs">
+    <Compile Include="FrmListeVisite.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmVisites.Designer.cs">
-      <DependentUpon>FrmVisites.cs</DependentUpon>
+    <Compile Include="FrmListeVisite.Designer.cs">
+      <DependentUpon>FrmListeVisite.cs</DependentUpon>
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Passerelle.cs" />
@@ -164,8 +164,8 @@
     <EmbeddedResource Include="FrmModifierVisite.resx">
       <DependentUpon>FrmModifierVisite.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmVisites.resx">
-      <DependentUpon>FrmVisites.cs</DependentUpon>
+    <EmbeddedResource Include="FrmListeVisite.resx">
+      <DependentUpon>FrmListeVisite.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

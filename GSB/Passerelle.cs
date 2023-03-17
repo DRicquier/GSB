@@ -325,7 +325,7 @@ namespace GSB {
         }
 
 
-        static public bool modifierPraticien(int id, string nom, string prenom, string rue, string codePostal, string ville,
+        static public bool modifierPraticien(int id, string nom, string rue, string codePostal, string ville,
             string telephone, string email, string unType,
             string uneSpecialite, out string message) {
             message = string.Empty;
@@ -333,7 +333,6 @@ namespace GSB {
             command.CommandType = CommandType.StoredProcedure;
             command.Parameters.AddWithValue("_id", id);
             command.Parameters.AddWithValue("_nom", nom);
-            command.Parameters.AddWithValue("_prenom", prenom);
             command.Parameters.AddWithValue("_rue", rue);
             command.Parameters.AddWithValue("_codePostal", codePostal);
             command.Parameters.AddWithValue("_ville", ville);

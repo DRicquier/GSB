@@ -35,8 +35,7 @@ namespace GSB {
 
         private void btnAjouter_Click(object sender, EventArgs e) {
             // On contrôle la sélection
-            
-            if (!Globale.mesVilles.Any(x => x.Nom.Equals(villeChamp.Text, StringComparison.InvariantCultureIgnoreCase))) {
+            if (!Globale.mesVilles.Exists(x => x.Nom.Equals(villeChamp.Text, StringComparison.OrdinalIgnoreCase))) {
                 MessageBox.Show(this, "Cette ville n'est pas valide !");
                 return;
             }
@@ -53,12 +52,25 @@ namespace GSB {
                 return;
             }
 
+            // Vérifier la validité du numéro de telephone
+            string tel = telChamp.Text;
+            if (!CheckUtils.isValidNumber(tel)) {
+                MessageBox.Show(this, "Format de numéro de téléphone invalide !");
+                return;
+            }
+            
+            // Vérifier la validité de l'adresse email
+            string email = mailChamp.Text;
+            if (!CheckUtils.isValidEmail(email)) {
+                MessageBox.Show(this, "Format d'adresse email invalide !");
+                return;
+            }
+            
             string nom = nomChamp.Text;
             string prenom = prenomChamp.Text;
             string rue = rueChamp.Text;
-            string tel = telChamp.Text;
-            string email = mailChamp.Text;
-            Ville ville = Globale.mesVilles.First(x => x.Nom.Equals(villeChamp.Text, StringComparison.InvariantCultureIgnoreCase));
+
+            Ville ville = Globale.mesVilles.Find(x => x.Nom.Equals(villeChamp.Text, StringComparison.OrdinalIgnoreCase));
             TypePraticien type = (TypePraticien)lesTypesBox.SelectedItem;
             Specialite specialite = (Specialite)lesSpecialitesBox.SelectedItem;
 
@@ -68,7 +80,7 @@ namespace GSB {
             // Le message est vide il n'y a donc pas eu d'erreur lors de l'ajout du praticien
             if (message.Length == 0) {
                 // On crée un objet Praticien à partir de l'id renvoyé par la procédure
-                Praticien praticien = new Praticien(idPraticien, nom, prenom, rue, ville.Code, ville.Nom, tel, email,
+                Praticien praticien = new Praticien(idPraticien, nom, prenom, rue, ville.Code, ville.Nom, email, tel,
                     type, specialite);
 
                 // On ajoute l'objet à la liste globale

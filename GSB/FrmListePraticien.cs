@@ -21,6 +21,14 @@ namespace GSB
         private void FrmPraticienListe_Load(object sender, EventArgs e)
         {
             // Affichage des praticiens dans le datagridview
+            
+            // Parametrage du datagridview
+            dgvPraticiens.AllowUserToResizeColumns = false;
+            dgvPraticiens.AllowUserToResizeRows = false;
+            dgvPraticiens.AllowUserToAddRows = false;
+            dgvPraticiens.AllowUserToDeleteRows = false;
+            dgvPraticiens.MultiSelect = false;
+
             dgvPraticiens.RowHeadersVisible = false;
             dgvPraticiens.ColumnCount = 5;
 
@@ -49,6 +57,25 @@ namespace GSB
             // On alimente le data grid view avec les praticiens
             Globale.mesPraticiens.ForEach(praticien =>
             {
+                // Ordre d'affichage
+                // NomPrenom - Telephone - Email - Rue + CodePostal + Ville - Date dernière visite
+                
+                DataGridViewRow row = new DataGridViewRow();
+
+                DataGridViewCell nomPrenomCell = new DataGridViewTextBoxCell();
+                nomPrenomCell.Value = praticien.NomPrenom;
+
+                DataGridViewCell telephoneCell = new DataGridViewTextBoxCell();
+                telephoneCell.Value = praticien.Telephone; 
+                
+                DataGridViewCell emailCell = new DataGridViewTextBoxCell();
+                emailCell.Value = praticien.Email;  
+                
+                DataGridViewCell adresseCell = new DataGridViewTextBoxCell();
+                adresseCell.Value = praticien.Rue + " \n" + praticien.CodePostal + " " + praticien.Ville;  
+                
+                DataGridViewCell derniereVisiteCell = new DataGridViewTextBoxCell();
+
                 // On récupère les visites du praticien et on les trie dans l'ordre du plus grand au plus petit
                 // C'est à dire de la plus récente à la moins récente
                 List<DateTime> orderedVisites = Globale.mesVisites
@@ -56,25 +83,26 @@ namespace GSB
                     .Select(visite => visite.DateEtHeure)
                     .OrderByDescending(time => time.Date)
                     .ToList();
-
-                // Par défaut le praticien n'a pas de visite
-                // todo Afficher "Aucune visite" en rouge
-                string dateDerniereVisite = "Aucune visite";
+                
+                bool aDejaVisite = orderedVisites.Count > 0;
                 
                 // Le praticien a au moins 1 visite
-                if (orderedVisites.Count > 0)
+                if (aDejaVisite)
                 {
                     // On prend la première car c'est la plus récente
-                    dateDerniereVisite = orderedVisites[0].ToString("dddd d MMMM yyyy");
+                    derniereVisiteCell.Value = orderedVisites[0].ToString("dddd d MMMM yyyy");
+                }
+                else {
+                    // Le praticien n'a aucune visite
+                    derniereVisiteCell.Value = "Aucune visite";
+
+                    // On met en rouge la ligne
+                    row.DefaultCellStyle.ForeColor = Color.Red;
                 }
                 
-                // Ordre d'affichage
-                // NomPrenom - Telephone - Email - Rue + CodePostal + Ville - Date dernière visite
-                
-                dgvPraticiens.Rows.Add(praticien.NomPrenom, praticien.Telephone, praticien.Email,
-                    praticien.Rue + " \n" + praticien.CodePostal + " " + praticien.Ville, dateDerniereVisite);
+                row.Cells.AddRange(nomPrenomCell, telephoneCell, emailCell, adresseCell, derniereVisiteCell);
+                dgvPraticiens.Rows.Add(row);
             });
-
         }
     }
 }

@@ -23,38 +23,38 @@ namespace GSB
 
             foreach (Medicament unMedoc in Globale.lesMedicaments)
             {
-                premierMedoc.Items.Add(unMedoc);
+                premierMedocBox.Items.Add(unMedoc);
             }
             foreach (Medicament unMedoc in Globale.lesMedicaments)
             {
-                secondMedoc.Items.Add(unMedoc);
+                secondMedocBox.Items.Add(unMedoc);
             }
 
             //Affichage des Commandes dans le datagridView
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.ColumnCount = 5;
+            dgvMedicament.RowHeadersVisible = false;
+            dgvMedicament.ColumnCount = 5;
 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvMedicament.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            dataGridView1.Columns[0].Name = "Médicament";
-            dataGridView1.Columns[0].Width = 100;
-            dataGridView1.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMedicament.Columns[0].Name = "Médicament";
+            dgvMedicament.Columns[0].Width = 100;
+            dgvMedicament.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dataGridView1.Columns[1].Name = "Quantité";
-            dataGridView1.Columns[1].Width = 100;
-            dataGridView1.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMedicament.Columns[1].Name = "Quantité";
+            dgvMedicament.Columns[1].Width = 100;
+            dgvMedicament.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dataGridView1.Columns[2].Name = "+";
-            dataGridView1.Columns[2].Width = 100;
-            dataGridView1.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMedicament.Columns[2].Name = "+";
+            dgvMedicament.Columns[2].Width = 100;
+            dgvMedicament.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dataGridView1.Columns[3].Name = "-";
-            dataGridView1.Columns[3].Width = 100;
-            dataGridView1.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMedicament.Columns[3].Name = "-";
+            dgvMedicament.Columns[3].Width = 100;
+            dgvMedicament.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-            dataGridView1.Columns[4].Name = "X";
-            dataGridView1.Columns[4].Width = 100;
-            dataGridView1.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dgvMedicament.Columns[4].Name = "X";
+            dgvMedicament.Columns[4].Width = 100;
+            dgvMedicament.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
         }
@@ -65,7 +65,7 @@ namespace GSB
             Icon icoMoins = new Icon("Ressources/moins.ico");
             Icon icoCroix = new Icon("Ressource/croix.ico");
 
-            dataGridView1.Rows.Add(lesMedicamentss.Text, quantite.Value,icoPlus , icoMoins, icoCroix);
+            dgvMedicament.Rows.Add(medicamentsBox.Text, quantiteBox.Value,icoPlus , icoMoins, icoCroix);
         }
     }
 }

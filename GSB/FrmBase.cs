@@ -74,8 +74,8 @@ namespace GSB {
         // consulter l'ensemble des visites réalisées
         private void consulterVisite_Click(object sender, EventArgs e) {
 
-            FrmVisites lesVisites = new FrmVisites();
-            lesVisites.Show();
+            FrmListeVisite lesListeVisite = new FrmListeVisite();
+            lesListeVisite.Show();
             Close();
         }
 

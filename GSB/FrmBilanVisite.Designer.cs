@@ -31,31 +31,31 @@ namespace GSB
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.date = new System.Windows.Forms.Label();
-            this.lieu = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.lieuLabel = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.typePraticien = new System.Windows.Forms.Label();
+            this.typePraticienLabel = new System.Windows.Forms.Label();
             this.label = new System.Windows.Forms.Label();
-            this.praticien = new System.Windows.Forms.Label();
+            this.praticienLabel = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.motif = new System.Windows.Forms.Label();
+            this.motifLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bilanBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.premierMedoc = new System.Windows.Forms.ComboBox();
-            this.secondMedoc = new System.Windows.Forms.ComboBox();
+            this.premierMedocBox = new System.Windows.Forms.ComboBox();
+            this.secondMedocBox = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvMedicament = new System.Windows.Forms.DataGridView();
             this.brnAjouter = new System.Windows.Forms.Button();
-            this.lesMedicamentss = new System.Windows.Forms.ComboBox();
-            this.quantite = new System.Windows.Forms.NumericUpDown();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quantite)).BeginInit();
+            this.medicamentsBox = new System.Windows.Forms.ComboBox();
+            this.quantiteBox = new System.Windows.Forms.NumericUpDown();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicament)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantiteBox)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitre
@@ -85,25 +85,25 @@ namespace GSB
             this.label2.TabIndex = 14;
             this.label2.Text = "Le";
             // 
-            // date
+            // dateLabel
             // 
-            this.date.AutoSize = true;
-            this.date.Location = new System.Drawing.Point(114, 138);
-            this.date.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.date.Name = "date";
-            this.date.Size = new System.Drawing.Size(28, 13);
-            this.date.TabIndex = 15;
-            this.date.Text = "date";
+            this.dateLabel.AutoSize = true;
+            this.dateLabel.Location = new System.Drawing.Point(114, 138);
+            this.dateLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(28, 13);
+            this.dateLabel.TabIndex = 15;
+            this.dateLabel.Text = "date";
             // 
-            // lieu
+            // lieuLabel
             // 
-            this.lieu.AutoSize = true;
-            this.lieu.Location = new System.Drawing.Point(114, 167);
-            this.lieu.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lieu.Name = "lieu";
-            this.lieu.Size = new System.Drawing.Size(23, 13);
-            this.lieu.TabIndex = 16;
-            this.lieu.Text = "lieu";
+            this.lieuLabel.AutoSize = true;
+            this.lieuLabel.Location = new System.Drawing.Point(114, 167);
+            this.lieuLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lieuLabel.Name = "lieuLabel";
+            this.lieuLabel.Size = new System.Drawing.Size(23, 13);
+            this.lieuLabel.TabIndex = 16;
+            this.lieuLabel.Text = "lieu";
             // 
             // label5
             // 
@@ -125,15 +125,15 @@ namespace GSB
             this.label6.TabIndex = 18;
             this.label6.Text = "Motif";
             // 
-            // typePraticien
+            // typePraticienLabel
             // 
-            this.typePraticien.AutoSize = true;
-            this.typePraticien.Location = new System.Drawing.Point(114, 272);
-            this.typePraticien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.typePraticien.Name = "typePraticien";
-            this.typePraticien.Size = new System.Drawing.Size(68, 13);
-            this.typePraticien.TabIndex = 19;
-            this.typePraticien.Text = "typePraticien";
+            this.typePraticienLabel.AutoSize = true;
+            this.typePraticienLabel.Location = new System.Drawing.Point(114, 272);
+            this.typePraticienLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.typePraticienLabel.Name = "typePraticienLabel";
+            this.typePraticienLabel.Size = new System.Drawing.Size(68, 13);
+            this.typePraticienLabel.TabIndex = 19;
+            this.typePraticienLabel.Text = "typePraticien";
             // 
             // label
             // 
@@ -145,15 +145,15 @@ namespace GSB
             this.label.TabIndex = 20;
             this.label.Text = "Type praticien";
             // 
-            // praticien
+            // praticienLabel
             // 
-            this.praticien.AutoSize = true;
-            this.praticien.Location = new System.Drawing.Point(114, 236);
-            this.praticien.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.praticien.Name = "praticien";
-            this.praticien.Size = new System.Drawing.Size(47, 13);
-            this.praticien.TabIndex = 21;
-            this.praticien.Text = "praticien";
+            this.praticienLabel.AutoSize = true;
+            this.praticienLabel.Location = new System.Drawing.Point(114, 236);
+            this.praticienLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.praticienLabel.Name = "praticienLabel";
+            this.praticienLabel.Size = new System.Drawing.Size(47, 13);
+            this.praticienLabel.TabIndex = 21;
+            this.praticienLabel.Text = "praticien";
             // 
             // label8
             // 
@@ -165,15 +165,15 @@ namespace GSB
             this.label8.TabIndex = 22;
             this.label8.Text = "Praticien";
             // 
-            // motif
+            // motifLabel
             // 
-            this.motif.AutoSize = true;
-            this.motif.Location = new System.Drawing.Point(114, 199);
-            this.motif.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.motif.Name = "motif";
-            this.motif.Size = new System.Drawing.Size(29, 13);
-            this.motif.TabIndex = 23;
-            this.motif.Text = "motif";
+            this.motifLabel.AutoSize = true;
+            this.motifLabel.Location = new System.Drawing.Point(114, 199);
+            this.motifLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.motifLabel.Name = "motifLabel";
+            this.motifLabel.Size = new System.Drawing.Size(29, 13);
+            this.motifLabel.TabIndex = 23;
+            this.motifLabel.Text = "motif";
             // 
             // label3
             // 
@@ -185,14 +185,14 @@ namespace GSB
             this.label3.TabIndex = 24;
             this.label3.Text = "Bilan de la visite";
             // 
-            // textBox1
+            // bilanBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(32, 349);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(410, 139);
-            this.textBox1.TabIndex = 25;
+            this.bilanBox.Location = new System.Drawing.Point(32, 349);
+            this.bilanBox.Margin = new System.Windows.Forms.Padding(2);
+            this.bilanBox.Multiline = true;
+            this.bilanBox.Name = "bilanBox";
+            this.bilanBox.Size = new System.Drawing.Size(410, 139);
+            this.bilanBox.TabIndex = 25;
             // 
             // label4
             // 
@@ -224,25 +224,25 @@ namespace GSB
             this.label9.TabIndex = 28;
             this.label9.Text = "Second médicament présenté";
             // 
-            // premierMedoc
+            // premierMedocBox
             // 
-            this.premierMedoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.premierMedoc.FormattingEnabled = true;
-            this.premierMedoc.Location = new System.Drawing.Point(268, 195);
-            this.premierMedoc.Margin = new System.Windows.Forms.Padding(2);
-            this.premierMedoc.Name = "premierMedoc";
-            this.premierMedoc.Size = new System.Drawing.Size(174, 21);
-            this.premierMedoc.TabIndex = 29;
+            this.premierMedocBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.premierMedocBox.FormattingEnabled = true;
+            this.premierMedocBox.Location = new System.Drawing.Point(268, 195);
+            this.premierMedocBox.Margin = new System.Windows.Forms.Padding(2);
+            this.premierMedocBox.Name = "premierMedocBox";
+            this.premierMedocBox.Size = new System.Drawing.Size(174, 21);
+            this.premierMedocBox.TabIndex = 29;
             // 
-            // secondMedoc
+            // secondMedocBox
             // 
-            this.secondMedoc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.secondMedoc.FormattingEnabled = true;
-            this.secondMedoc.Location = new System.Drawing.Point(268, 280);
-            this.secondMedoc.Margin = new System.Windows.Forms.Padding(2);
-            this.secondMedoc.Name = "secondMedoc";
-            this.secondMedoc.Size = new System.Drawing.Size(174, 21);
-            this.secondMedoc.TabIndex = 30;
+            this.secondMedocBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.secondMedocBox.FormattingEnabled = true;
+            this.secondMedocBox.Location = new System.Drawing.Point(268, 280);
+            this.secondMedocBox.Margin = new System.Windows.Forms.Padding(2);
+            this.secondMedocBox.Name = "secondMedocBox";
+            this.secondMedocBox.Size = new System.Drawing.Size(174, 21);
+            this.secondMedocBox.TabIndex = 30;
             // 
             // label10
             // 
@@ -274,24 +274,24 @@ namespace GSB
             this.label12.TabIndex = 33;
             this.label12.Text = "Médicament";
             // 
-            // dataGridView1
+            // dgvMedicament
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(562, 236);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dataGridView1.RowHeadersWidth = 82;
-            this.dataGridView1.RowTemplate.Height = 33;
-            this.dataGridView1.Size = new System.Drawing.Size(368, 256);
-            this.dataGridView1.TabIndex = 34;
+            this.dgvMedicament.AllowUserToAddRows = false;
+            this.dgvMedicament.AllowUserToDeleteRows = false;
+            this.dgvMedicament.AllowUserToResizeColumns = false;
+            this.dgvMedicament.AllowUserToResizeRows = false;
+            this.dgvMedicament.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgvMedicament.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMedicament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMedicament.Location = new System.Drawing.Point(562, 236);
+            this.dgvMedicament.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvMedicament.Name = "dgvMedicament";
+            this.dgvMedicament.ReadOnly = true;
+            this.dgvMedicament.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvMedicament.RowHeadersWidth = 82;
+            this.dgvMedicament.RowTemplate.Height = 33;
+            this.dgvMedicament.Size = new System.Drawing.Size(368, 256);
+            this.dgvMedicament.TabIndex = 34;
             // 
             // brnAjouter
             // 
@@ -304,52 +304,52 @@ namespace GSB
             this.brnAjouter.UseVisualStyleBackColor = true;
             this.brnAjouter.Click += new System.EventHandler(this.brnAjouter_Click);
             // 
-            // lesMedicamentss
+            // medicamentsBox
             // 
-            this.lesMedicamentss.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.lesMedicamentss.FormattingEnabled = true;
-            this.lesMedicamentss.Location = new System.Drawing.Point(562, 206);
-            this.lesMedicamentss.Margin = new System.Windows.Forms.Padding(2);
-            this.lesMedicamentss.Name = "lesMedicamentss";
-            this.lesMedicamentss.Size = new System.Drawing.Size(144, 21);
-            this.lesMedicamentss.TabIndex = 36;
+            this.medicamentsBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.medicamentsBox.FormattingEnabled = true;
+            this.medicamentsBox.Location = new System.Drawing.Point(562, 206);
+            this.medicamentsBox.Margin = new System.Windows.Forms.Padding(2);
+            this.medicamentsBox.Name = "medicamentsBox";
+            this.medicamentsBox.Size = new System.Drawing.Size(144, 21);
+            this.medicamentsBox.TabIndex = 36;
             // 
-            // quantite
+            // quantiteBox
             // 
-            this.quantite.Location = new System.Drawing.Point(724, 206);
-            this.quantite.Margin = new System.Windows.Forms.Padding(2);
-            this.quantite.Name = "quantite";
-            this.quantite.Size = new System.Drawing.Size(44, 20);
-            this.quantite.TabIndex = 37;
+            this.quantiteBox.Location = new System.Drawing.Point(724, 206);
+            this.quantiteBox.Margin = new System.Windows.Forms.Padding(2);
+            this.quantiteBox.Name = "quantiteBox";
+            this.quantiteBox.Size = new System.Drawing.Size(44, 20);
+            this.quantiteBox.TabIndex = 37;
             // 
             // FrmBilanVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(936, 534);
-            this.Controls.Add(this.quantite);
-            this.Controls.Add(this.lesMedicamentss);
+            this.Controls.Add(this.quantiteBox);
+            this.Controls.Add(this.medicamentsBox);
             this.Controls.Add(this.brnAjouter);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dgvMedicament);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.secondMedoc);
-            this.Controls.Add(this.premierMedoc);
+            this.Controls.Add(this.secondMedocBox);
+            this.Controls.Add(this.premierMedocBox);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.bilanBox);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.motif);
+            this.Controls.Add(this.motifLabel);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.praticien);
+            this.Controls.Add(this.praticienLabel);
             this.Controls.Add(this.label);
-            this.Controls.Add(this.typePraticien);
+            this.Controls.Add(this.typePraticienLabel);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.lieu);
-            this.Controls.Add(this.date);
+            this.Controls.Add(this.lieuLabel);
+            this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(1);
@@ -360,31 +360,31 @@ namespace GSB
             this.Controls.SetChildIndex(this.lblTitre, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.label2, 0);
-            this.Controls.SetChildIndex(this.date, 0);
-            this.Controls.SetChildIndex(this.lieu, 0);
+            this.Controls.SetChildIndex(this.dateLabel, 0);
+            this.Controls.SetChildIndex(this.lieuLabel, 0);
             this.Controls.SetChildIndex(this.label5, 0);
             this.Controls.SetChildIndex(this.label6, 0);
-            this.Controls.SetChildIndex(this.typePraticien, 0);
+            this.Controls.SetChildIndex(this.typePraticienLabel, 0);
             this.Controls.SetChildIndex(this.label, 0);
-            this.Controls.SetChildIndex(this.praticien, 0);
+            this.Controls.SetChildIndex(this.praticienLabel, 0);
             this.Controls.SetChildIndex(this.label8, 0);
-            this.Controls.SetChildIndex(this.motif, 0);
+            this.Controls.SetChildIndex(this.motifLabel, 0);
             this.Controls.SetChildIndex(this.label3, 0);
-            this.Controls.SetChildIndex(this.textBox1, 0);
+            this.Controls.SetChildIndex(this.bilanBox, 0);
             this.Controls.SetChildIndex(this.label4, 0);
             this.Controls.SetChildIndex(this.label7, 0);
             this.Controls.SetChildIndex(this.label9, 0);
-            this.Controls.SetChildIndex(this.premierMedoc, 0);
-            this.Controls.SetChildIndex(this.secondMedoc, 0);
+            this.Controls.SetChildIndex(this.premierMedocBox, 0);
+            this.Controls.SetChildIndex(this.secondMedocBox, 0);
             this.Controls.SetChildIndex(this.label10, 0);
             this.Controls.SetChildIndex(this.label11, 0);
             this.Controls.SetChildIndex(this.label12, 0);
-            this.Controls.SetChildIndex(this.dataGridView1, 0);
+            this.Controls.SetChildIndex(this.dgvMedicament, 0);
             this.Controls.SetChildIndex(this.brnAjouter, 0);
-            this.Controls.SetChildIndex(this.lesMedicamentss, 0);
-            this.Controls.SetChildIndex(this.quantite, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.quantite)).EndInit();
+            this.Controls.SetChildIndex(this.medicamentsBox, 0);
+            this.Controls.SetChildIndex(this.quantiteBox, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMedicament)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.quantiteBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -394,28 +394,28 @@ namespace GSB
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label date;
-        private System.Windows.Forms.Label lieu;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Label lieuLabel;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label typePraticien;
+        private System.Windows.Forms.Label typePraticienLabel;
         private System.Windows.Forms.Label label;
-        private System.Windows.Forms.Label praticien;
+        private System.Windows.Forms.Label praticienLabel;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label motif;
+        private System.Windows.Forms.Label motifLabel;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox bilanBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox premierMedoc;
-        private System.Windows.Forms.ComboBox secondMedoc;
+        private System.Windows.Forms.ComboBox premierMedocBox;
+        private System.Windows.Forms.ComboBox secondMedocBox;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvMedicament;
         private System.Windows.Forms.Button brnAjouter;
-        private System.Windows.Forms.ComboBox lesMedicamentss;
-        private System.Windows.Forms.NumericUpDown quantite;
+        private System.Windows.Forms.ComboBox medicamentsBox;
+        private System.Windows.Forms.NumericUpDown quantiteBox;
     }
 }
