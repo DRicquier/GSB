@@ -185,6 +185,15 @@ namespace GSB
             int idVisite = (int)idCell.Value;
 
             bool success = Passerelle.supprimerRendezVous(idVisite, out string message);
+
+            if(!success) {
+                MessageBox.Show("Erreur lors de la suppression : " + message);
+            } else {
+                MessageBox.Show("Visite supprimée");
+                // On met à jour le data grid view
+                FrmVisiteModif_Load(sender, e);
+            }
+            
         }
     }
 }

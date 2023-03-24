@@ -61,6 +61,20 @@ namespace GSB
             dgvMedicament.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
 
+            foreach(Visite uneVisite in Globale.mesVisites) {
+                if(uneVisite.Bilan == null) {
+                    dateLabel.Text = uneVisite.DateEtHeure.ToString("dd/MM/yyyy");
+                    lieuLabel.Text = uneVisite.LePraticien.Ville;
+                    motifLabel.Text = uneVisite.LeMotif.Libelle;
+                    praticienLabel.Text = uneVisite.LePraticien.Nom + " " + uneVisite.LePraticien.Prenom;
+                    Medicament premierModoc = uneVisite.PremierMedicament;
+                    premierMedocBox.SelectedItem = premierModoc;
+                    Medicament secondMedoc = uneVisite.SecondMedicament;
+                    secondMedocBox.SelectedItem =  secondMedoc;
+                    break;
+                }
+            }
+
         }
 
         private void brnAjouter_Click(object sender, EventArgs e) {
@@ -72,8 +86,5 @@ namespace GSB
             dgvMedicament.Rows.Add(medicamentsBox.Text, quantiteBox.Value,icoPlus, icoMoins, icoCroix);
         }
 
-        private void medicamentsBox_SelectedIndexChanged(object sender, EventArgs e) {
-
-        }
     }
 }
