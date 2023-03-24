@@ -313,6 +313,7 @@ namespace GSB
             this.medicamentsBox.Name = "medicamentsBox";
             this.medicamentsBox.Size = new System.Drawing.Size(144, 21);
             this.medicamentsBox.TabIndex = 36;
+            this.medicamentsBox.SelectedIndexChanged += new System.EventHandler(this.medicamentsBox_SelectedIndexChanged);
             // 
             // quantiteBox
             // 

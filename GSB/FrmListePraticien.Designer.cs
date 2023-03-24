@@ -39,11 +39,12 @@
             this.dgvPraticiens.AllowUserToDeleteRows = false;
             this.dgvPraticiens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPraticiens.Location = new System.Drawing.Point(20, 100);
-            this.dgvPraticiens.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvPraticiens.Margin = new System.Windows.Forms.Padding(2);
             this.dgvPraticiens.Name = "dgvPraticiens";
             this.dgvPraticiens.ReadOnly = true;
             this.dgvPraticiens.RowHeadersWidth = 82;
             this.dgvPraticiens.RowTemplate.Height = 33;
+            this.dgvPraticiens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPraticiens.Size = new System.Drawing.Size(1252, 572);
             this.dgvPraticiens.TabIndex = 13;
             // 
@@ -53,7 +54,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1297, 727);
             this.Controls.Add(this.dgvPraticiens);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmListePraticien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPraticienListe";

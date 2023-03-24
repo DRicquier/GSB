@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using lesClasses;
+using System.Text.RegularExpressions;
 
 namespace GSB {
     public partial class FrmModifierPraticien : FrmBase {
@@ -60,7 +61,7 @@ namespace GSB {
             prenomChamp.Text = praticien.Prenom;
             rueChamp.Text = praticien.Rue;
             villeChamp.Text = praticien.Ville;
-            telChamp.Text = praticien.Telephone;
+            telChamp.Text = Regex.Replace(praticien.Telephone, @"\s+", String.Empty);
             mailChamp.Text = praticien.Email;
             lesTypes.SelectedItem = praticien.Type;
             lesSpecialités.SelectedItem = praticien.Specialite;
@@ -89,7 +90,7 @@ namespace GSB {
                 return;
             }
             Ville ville = Globale.mesVilles.Find(x => x.Nom.Equals(villeName));
-            
+           
             // Vérifier la validité du numéro de telephone
             string telephone = telChamp.Text;
             if (!CheckUtils.isValidNumber(telephone)) {
@@ -186,5 +187,7 @@ namespace GSB {
 
             MessageBox.Show("Praticien supprimé !");
         }
+
+        
     }
 }

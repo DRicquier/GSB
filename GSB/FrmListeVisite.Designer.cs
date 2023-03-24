@@ -312,17 +312,23 @@ namespace GSB
             // 
             this.dgvVisites.AllowUserToAddRows = false;
             this.dgvVisites.AllowUserToDeleteRows = false;
+            this.dgvVisites.AllowUserToResizeColumns = false;
+            this.dgvVisites.AllowUserToResizeRows = false;
+            this.dgvVisites.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dgvVisites.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvVisites.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvVisites.Location = new System.Drawing.Point(8, 47);
             this.dgvVisites.Margin = new System.Windows.Forms.Padding(2);
             this.dgvVisites.Name = "dgvVisites";
             this.dgvVisites.ReadOnly = true;
+            this.dgvVisites.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvVisites.RowHeadersWidth = 82;
             this.dgvVisites.RowTemplate.Height = 33;
+            this.dgvVisites.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVisites.Size = new System.Drawing.Size(378, 362);
             this.dgvVisites.TabIndex = 15;
             this.dgvVisites.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.onCellContentClick);
-            this.dgvVisites.SelectionChanged += new EventHandler(this.onSelectionChanged);
+            this.dgvVisites.SelectionChanged += new System.EventHandler(this.onSelectionChanged);
             // 
             // FrmListeVisite
             // 

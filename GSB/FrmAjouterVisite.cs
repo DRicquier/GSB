@@ -86,8 +86,12 @@ namespace GSB {
             Praticien praticien = (Praticien)lesPraticiens.SelectedItem;
             Motif motif = (Motif)lesMotifs.SelectedItem;
             DateTime date = dateEtHeure.Value;
+            
+
 
             int idVisite = Passerelle.ajouterRendezVous(praticien.Id, motif.Id, date, out string message);
+
+            
 
             // Si le message est vide alors il n'y a pas eu d'erreur lors de l'ajout
             if (message.Length == 0) {

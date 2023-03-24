@@ -112,26 +112,23 @@ namespace GSB {
             reader.Close();
 
             List<Praticien> lesPraticiens = new List<Praticien>();
-            command.CommandText = "select * from mespraticiens";
+            command.CommandText = "select id, nom, prenom, rue, codePostal, ville, telephone, email, idType, idSpecialite from mespraticiens";
             reader = command.ExecuteReader();
+            
             while (reader.Read()) {
                 int id = reader.GetInt32("id");
                 string nom = reader.GetString("nom");
                 string prenom = reader.GetString("prenom");
                 string rue = reader.GetString("rue");
-                string codePostal = reader.GetString("codepostal");
+                string codePostal = reader.GetString("codePostal");
                 string ville = reader.GetString("ville");
                 string telephone = reader.GetString("telephone");
                 string email = reader.GetString("email");
                 string idType = reader.GetString("idType");
+                TypePraticien typePraticien = lesTypesPraticiens.Find(x => x.Id.Equals(idType));
+                Specialite specialite = reader.IsDBNull(9) ? null : lesSpecialites.Find(x => x.Id.Equals(reader.GetString("idSpecialite")));
 
-                TypePraticien typePraticien = lesTypesPraticiens.First(x => x.Id.Equals(idType));
-                Specialite specialite = reader.IsDBNull(9)
-                    ? null
-                    : lesSpecialites.First(x => x.Id.Equals(reader.GetString("idSpecialite")));
-
-                Praticien praticien = new Praticien(id, nom, prenom, rue, codePostal, ville, email, telephone,
-                    typePraticien, specialite);
+                Praticien praticien = new Praticien(id, nom, prenom, rue, codePostal, ville, email, telephone, typePraticien, specialite);
                 lesPraticiens.Add(praticien);
             }
 
@@ -158,6 +155,10 @@ namespace GSB {
                 string contreIndication = reader.GetString("contreIndication");
                 string idFamille = reader.GetString("idFamille");
 
+                // On vérifie que la famille du médicament
+                if (!lesFamilles.ContainsKey(idFamille))
+                    continue;
+                
                 Famille famille = lesFamilles[idFamille];
                 Medicament medicament = new Medicament(id, nom, composition, effets, contreIndication, famille);
                 lesMedicaments.Add(medicament);
@@ -166,29 +167,50 @@ namespace GSB {
             reader.Close();
 
             List<Visite> lesVisites = new List<Visite>();
-            command.CommandText =
-                "select id, dateetheure, bilan, idmotif, idvisiteur, idpraticien, premiermedicament, secondmedicament from mesvisites";
+            command.CommandText = "select id, dateEtHeure, bilan, idMotif, idVisiteur, idPraticien, premierMedicament, secondMedicament from mesvisites";
             reader = command.ExecuteReader();
             while (reader.Read()) {
                 int id = reader.GetInt32("id");
-                DateTime dateEtHeure = reader.GetDateTime("dateetheure");
-                int idMotif = reader.GetInt32("idmotif");
-                int idPraticien = reader.GetInt32("idpraticien");
-
-                /*
-                if (!reader.IsDBNull(4)) {
-                    string premierMedicament = reader.GetString("premiermedicament");
-                }
-                
-                if (!reader.IsDBNull(5)) {
-                    string secondMedicament = reader.GetString("secondmedicament");
-                }
-                */
+                DateTime dateEtHeure = reader.GetDateTime("dateEtHeure");
+                int idMotif = reader.GetInt32("idMotif");
+                int idPraticien = reader.GetInt32("idPraticien");
 
                 Praticien praticien = lesPraticiens.First(x => x.Id.Equals(idPraticien));
                 Motif motif = lesMotifs.First(x => x.Id.Equals(idMotif));
-
                 Visite visite = new Visite(id, praticien, motif, dateEtHeure);
+
+                // Le bilan n'est pas null
+                if (!reader.IsDBNull(2))
+                {
+                    visite.Bilan = reader.GetString(2);
+                }
+
+                // Le premier médicament n'est pas null
+                if (!reader.IsDBNull(6))
+                {
+                    string idPremierMedicament = reader.GetString(6);
+                    Medicament premierMedicament = lesMedicaments.Find(x => x.Id.Equals(idPremierMedicament));
+
+                    // Si le medicament existe bien et a bien été chargé à partir de la base de données
+                    if (premierMedicament != null)
+                    {
+                        visite.PremierMedicament = premierMedicament;
+                    }
+                }
+                
+                // Le second médicament n'est pas null
+                if (!reader.IsDBNull(6))
+                {
+                    string idSecondMedicament = reader.GetString(6);
+                    Medicament secondMedicament = lesMedicaments.Find(x => x.Id.Equals(idSecondMedicament));
+                    
+                    // Si le medicament existe bien et a bien été chargé à partir de la base de données
+                    if (secondMedicament != null)
+                    {
+                        visite.SecondMedicament = secondMedicament;
+                    }
+                }
+                
                 lesVisites.Add(visite);
             }
 
@@ -227,12 +249,14 @@ namespace GSB {
             command.Parameters.AddWithValue("_idPraticien", idPraticien);
             command.Parameters.AddWithValue("_idMotif", idMotif);
             command.Parameters.AddWithValue("_dateEtHeure", uneDate);
-            command.Parameters.Add("idVisite", MySqlDbType.Int32);
-            command.Parameters["idVisite"].Direction = ParameterDirection.Output;
+            Console.WriteLine(uneDate);
+            
+            MySqlParameter idVisiteParameter = command.Parameters.Add("_idVisite", MySqlDbType.Int32);
+            idVisiteParameter.Direction = ParameterDirection.Output;
 
             try {
                 command.ExecuteNonQuery();
-                int idVisite = int.Parse(command.Parameters["idVisite"].Value.ToString());
+                int idVisite = int.Parse(idVisiteParameter.Value.ToString());
                 return idVisite;
             }
             catch (Exception e) {
@@ -245,7 +269,7 @@ namespace GSB {
             message = string.Empty;
             MySqlCommand command = new MySqlCommand("supprimerRendezVous", cnx);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("idVisite", idVisite);
+            command.Parameters.AddWithValue("_idVisite", idVisite);
 
             try {
                 command.ExecuteNonQuery();
@@ -261,7 +285,7 @@ namespace GSB {
             message = string.Empty;
             MySqlCommand command = new MySqlCommand("modifierRendezVous", cnx);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("idVisite", idVisite);
+            command.Parameters.AddWithValue("_idVisite", idVisite);
             command.Parameters.AddWithValue("_dateEtHeure", uneDateEtHeure);
 
             try {
@@ -281,7 +305,9 @@ namespace GSB {
             command.Parameters.AddWithValue("_idVisite", uneVisite.Id);
             command.Parameters.AddWithValue("_bilan", uneVisite.Bilan);
             command.Parameters.AddWithValue("_premierMedicament", uneVisite.PremierMedicament.Id);
-            command.Parameters.AddWithValue("_secondMedicament", uneVisite.SecondMedicament.Id);
+            
+            // Le second médicament est optionel
+            command.Parameters.AddWithValue("_secondMedicament", uneVisite.SecondMedicament == null ? "" : uneVisite.SecondMedicament.Id);
 
             try {
                 command.ExecuteNonQuery();
@@ -309,12 +335,13 @@ namespace GSB {
             command.Parameters.AddWithValue("_email", email);
             command.Parameters.AddWithValue("_idType", unType);
             command.Parameters.AddWithValue("_idSpecialite", uneSpecialite);
-            command.Parameters.Add("idPraticien", MySqlDbType.Int32);
-            command.Parameters["idPraticien"].Direction = ParameterDirection.Output;
+
+            MySqlParameter idPraticienParameter = command.Parameters.Add("_idPraticien", MySqlDbType.Int32);
+            idPraticienParameter.Direction = ParameterDirection.Output;
 
             try {
                 command.ExecuteNonQuery();
-                int idPraticien = int.Parse(command.Parameters["idPraticien"].Value.ToString());
+                int idPraticien = int.Parse(idPraticienParameter.Value.ToString());
                 return idPraticien;
             }
             catch (Exception e) {
@@ -355,7 +382,7 @@ namespace GSB {
             message = string.Empty;
             MySqlCommand command = new MySqlCommand("supprimerPraticien", cnx);
             command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("idPraticien", id);
+            command.Parameters.AddWithValue("_idPraticien", id);
 
             try {
                 command.ExecuteNonQuery();

@@ -30,6 +30,10 @@ namespace GSB
                 secondMedocBox.Items.Add(unMedoc);
             }
 
+            foreach(Medicament unMedoc in Globale.lesMedicaments) {
+                medicamentsBox.Items.Add(unMedoc);
+            }
+
             //Affichage des Commandes dans le datagridView
             dgvMedicament.RowHeadersVisible = false;
             dgvMedicament.ColumnCount = 5;
@@ -61,11 +65,15 @@ namespace GSB
 
         private void brnAjouter_Click(object sender, EventArgs e) {
 
-            Icon icoPlus = new Icon("Ressources/plus.ico");
-            Icon icoMoins = new Icon("Ressources/moins.ico");
-            Icon icoCroix = new Icon("Ressource/croix.ico");
+            Icon icoPlus = new Icon("../../Resources/plus.ico");
+            Icon icoMoins = new Icon("../../Resources/moins.ico");
+            Icon icoCroix = new Icon("../../Resources/croix.ico");
 
-            dgvMedicament.Rows.Add(medicamentsBox.Text, quantiteBox.Value,icoPlus , icoMoins, icoCroix);
+            dgvMedicament.Rows.Add(medicamentsBox.Text, quantiteBox.Value,icoPlus, icoMoins, icoCroix);
+        }
+
+        private void medicamentsBox_SelectedIndexChanged(object sender, EventArgs e) {
+
         }
     }
 }
