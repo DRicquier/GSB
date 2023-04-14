@@ -19,7 +19,7 @@ namespace lesClasses
 
 
         // attribut privé lesEchantillons : dictionnaire de médicament associé à une quantité
-        private SortedDictionary<Medicament, int> lesEchantillons;
+        public SortedDictionary<Medicament, int> lesEchantillons;
 
         // Propriétés automatiques Id, LePRaticien LeMotif DateetHeure Bilan PremierMedicament SecondMedicament
         public int Id { get; }

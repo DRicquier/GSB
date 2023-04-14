@@ -209,9 +209,9 @@
     <None Include="Resources\Image1.bmp" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\croix.ico" />
-    <Content Include="Resources\moins.ico" />
-    <Content Include="Resources\plus.ico" />
+    <Content Include="Resources\annuler.png" />
+    <Content Include="Resources\moins.png" />
+    <Content Include="Resources\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

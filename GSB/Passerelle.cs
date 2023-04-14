@@ -199,9 +199,9 @@ namespace GSB {
                 }
                 
                 // Le second médicament n'est pas null
-                if (!reader.IsDBNull(6))
+                if (!reader.IsDBNull(7))
                 {
-                    string idSecondMedicament = reader.GetString(6);
+                    string idSecondMedicament = reader.GetString(7);
                     Medicament secondMedicament = lesMedicaments.Find(x => x.Id.Equals(idSecondMedicament));
                     
                     // Si le medicament existe bien et a bien été chargé à partir de la base de données
@@ -389,6 +389,23 @@ namespace GSB {
                 return true;
             }
             catch (Exception e) {
+                message = e.Message;
+                return false;
+            }
+        }
+
+        static public bool ajouterEchantillon(int idVisite, string idMedicament, int quantite, out string message) {
+            message = string.Empty;
+            MySqlCommand command = new MySqlCommand("ajouterEchantillon", cnx);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("_idVisite", idVisite);
+            command.Parameters.AddWithValue("_idMedicament", idMedicament);
+            command.Parameters.AddWithValue("_quantite", quantite);
+
+            try {
+                command.ExecuteNonQuery();
+                return true;
+            } catch (Exception e) {
                 message = e.Message;
                 return false;
             }

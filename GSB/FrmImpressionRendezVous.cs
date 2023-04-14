@@ -16,16 +16,19 @@ namespace GSB {
         }
 
         private void FrmImpressionRendezVous_Load(object sender, EventArgs e) {
+            //charge la fonction parametrerComposant
             parametrerComposant();
         }
 
         private void parametrerComposant() {
+            //Paramètre de l'affichage
             WindowState = FormWindowState.Normal;
             Location = new Point((Screen.PrimaryScreen.WorkingArea.Width - this.Width) / 2, (Screen.PrimaryScreen.WorkingArea.Height - this.Height) / 2);
             MaximizeBox = false;
             MinimizeBox = false;
         }
         private void btnAperçu_Click(object sender, EventArgs e) {
+            //Lors du clique, cela affiche l'aperçu avant l'impression
             apercuXml2.Document = printXml;
             apercuXml2.WindowState = FormWindowState.Maximized;
             apercuXml2.ShowDialog();
@@ -116,7 +119,6 @@ namespace GSB {
             e.Graphics.DrawLine(styleTrait, point1, point2);
 
             //Remplir chaque lignes avec les visites
-
             Globale.mesVisites.ForEach(visite => {
 
                 if (visite.DateEtHeure >= dateTimePicker1.Value && visite.DateEtHeure <= dateTimePicker2.Value) {
@@ -169,6 +171,6 @@ namespace GSB {
                     }
                 }
             });
+        }
     }
-}
 }

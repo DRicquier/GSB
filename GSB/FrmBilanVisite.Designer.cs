@@ -29,6 +29,7 @@ namespace GSB
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.dateLabel = new System.Windows.Forms.Label();
@@ -54,6 +55,7 @@ namespace GSB
             this.brnAjouter = new System.Windows.Forms.Button();
             this.medicamentsBox = new System.Windows.Forms.ComboBox();
             this.quantiteBox = new System.Windows.Forms.NumericUpDown();
+            this.btnEnregistrer = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicament)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantiteBox)).BeginInit();
             this.SuspendLayout();
@@ -282,7 +284,14 @@ namespace GSB
             this.dgvMedicament.AllowUserToResizeRows = false;
             this.dgvMedicament.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvMedicament.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvMedicament.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvMedicament.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvMedicament.Location = new System.Drawing.Point(562, 236);
             this.dgvMedicament.Margin = new System.Windows.Forms.Padding(2);
             this.dgvMedicament.Name = "dgvMedicament";
@@ -292,6 +301,7 @@ namespace GSB
             this.dgvMedicament.RowTemplate.Height = 33;
             this.dgvMedicament.Size = new System.Drawing.Size(368, 256);
             this.dgvMedicament.TabIndex = 34;
+            this.dgvMedicament.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMedicament_CellClick);
             // 
             // brnAjouter
             // 
@@ -313,7 +323,6 @@ namespace GSB
             this.medicamentsBox.Name = "medicamentsBox";
             this.medicamentsBox.Size = new System.Drawing.Size(144, 21);
             this.medicamentsBox.TabIndex = 36;
-           
             // 
             // quantiteBox
             // 
@@ -323,11 +332,22 @@ namespace GSB
             this.quantiteBox.Size = new System.Drawing.Size(44, 20);
             this.quantiteBox.TabIndex = 37;
             // 
+            // btnEnregistrer
+            // 
+            this.btnEnregistrer.Location = new System.Drawing.Point(367, 518);
+            this.btnEnregistrer.Name = "btnEnregistrer";
+            this.btnEnregistrer.Size = new System.Drawing.Size(232, 46);
+            this.btnEnregistrer.TabIndex = 38;
+            this.btnEnregistrer.Text = "Enregistrer le bilan";
+            this.btnEnregistrer.UseVisualStyleBackColor = true;
+            this.btnEnregistrer.Click += new System.EventHandler(this.btnEnregistrer_Click);
+            // 
             // FrmBilanVisite
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(936, 534);
+            this.ClientSize = new System.Drawing.Size(936, 607);
+            this.Controls.Add(this.btnEnregistrer);
             this.Controls.Add(this.quantiteBox);
             this.Controls.Add(this.medicamentsBox);
             this.Controls.Add(this.brnAjouter);
@@ -384,6 +404,7 @@ namespace GSB
             this.Controls.SetChildIndex(this.brnAjouter, 0);
             this.Controls.SetChildIndex(this.medicamentsBox, 0);
             this.Controls.SetChildIndex(this.quantiteBox, 0);
+            this.Controls.SetChildIndex(this.btnEnregistrer, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dgvMedicament)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantiteBox)).EndInit();
             this.ResumeLayout(false);
@@ -418,5 +439,6 @@ namespace GSB
         private System.Windows.Forms.Button brnAjouter;
         private System.Windows.Forms.ComboBox medicamentsBox;
         private System.Windows.Forms.NumericUpDown quantiteBox;
+        private System.Windows.Forms.Button btnEnregistrer;
     }
 }
