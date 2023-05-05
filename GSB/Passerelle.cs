@@ -12,6 +12,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using lesClasses;
+using LesClasses;
 
 namespace GSB {
     static class Passerelle {
@@ -216,6 +217,17 @@ namespace GSB {
 
             reader.Close();
 
+            List<Presentation> lesPresentations = new List<Presentation>();
+            command.CommandText = "select id, date, sujet from presentation";
+            reader = command.ExecuteReader();
+            while (reader.Read()) {
+                Presentation presentation = new Presentation(reader.GetInt32("id"), reader.GetDateTime("date"), reader.GetString("sujet"));
+                lesPresentations.Add(presentation);
+            }
+
+            reader.Close();
+
+
             Globale.lesSpecialites = lesSpecialites;
             Globale.lesTypes = lesTypesPraticiens;
             Globale.lesMotifs = lesMotifs;
@@ -224,6 +236,7 @@ namespace GSB {
             Globale.mesVilles = lesVilles;
             Globale.lesMedicaments = lesMedicaments;
             Globale.mesVisites = lesVisites;
+            Globale.lesPresentations = lesPresentations;
         }
 
         /**
@@ -410,5 +423,20 @@ namespace GSB {
                 return false;
             }
         }
+
+        static public bool ajouterInscription(int idPresentation, out string message) {
+            message = string.Empty;
+            MySqlCommand command = new MySqlCommand("ajouterInscription", cnx);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("_idPresentation", idPresentation);
+            try {
+                command.ExecuteNonQuery();
+                return true;
+            } catch (Exception e) {
+                message = e.Message;
+                return false;
+            }
+        }
+
     }
 }

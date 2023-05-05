@@ -50,6 +50,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblVisiteur = new System.Windows.Forms.Label();
             this.labelGsb = new System.Windows.Forms.Label();
+            this.inscriptionPrésentationToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -159,7 +160,8 @@
             // medicamentToolStripMenuItem
             // 
             this.medicamentToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ficheMédicament});
+            this.ficheMédicament,
+            this.inscriptionPrésentationToolStripMenuItem});
             this.medicamentToolStripMenuItem.Name = "medicamentToolStripMenuItem";
             this.medicamentToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.medicamentToolStripMenuItem.Size = new System.Drawing.Size(86, 25);
@@ -170,7 +172,7 @@
             this.ficheMédicament.Name = "ficheMédicament";
             this.ficheMédicament.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.M)));
             this.ficheMédicament.ShowShortcutKeys = false;
-            this.ficheMédicament.Size = new System.Drawing.Size(165, 22);
+            this.ficheMédicament.Size = new System.Drawing.Size(199, 22);
             this.ficheMédicament.Text = "&Fiche médicament";
             this.ficheMédicament.Click += new System.EventHandler(this.ficheMédicamentToolStripMenuItem_Click);
             // 
@@ -260,6 +262,13 @@
             this.labelGsb.Text = "GSB - Galaxy Swiss Bourdin - Visiteur connecté :";
             this.labelGsb.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // inscriptionPrésentationToolStripMenuItem
+            // 
+            this.inscriptionPrésentationToolStripMenuItem.Name = "inscriptionPrésentationToolStripMenuItem";
+            this.inscriptionPrésentationToolStripMenuItem.Size = new System.Drawing.Size(199, 22);
+            this.inscriptionPrésentationToolStripMenuItem.Text = "Inscription présentation";
+            this.inscriptionPrésentationToolStripMenuItem.Click += new System.EventHandler(this.inscriptionPrésentationToolStripMenuItem_Click);
+            // 
             // FrmBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -305,5 +314,6 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripMenuItem déconnexionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem inscriptionPrésentationToolStripMenuItem;
     }
 }

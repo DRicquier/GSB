@@ -328,9 +328,24 @@ namespace GSB
             // 
             this.quantiteBox.Location = new System.Drawing.Point(724, 206);
             this.quantiteBox.Margin = new System.Windows.Forms.Padding(2);
+            this.quantiteBox.Maximum = new decimal(new int[] {
+            60,
+            0,
+            0,
+            0});
+            this.quantiteBox.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.quantiteBox.Name = "quantiteBox";
             this.quantiteBox.Size = new System.Drawing.Size(44, 20);
             this.quantiteBox.TabIndex = 37;
+            this.quantiteBox.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // btnEnregistrer
             // 

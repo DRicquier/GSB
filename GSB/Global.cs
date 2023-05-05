@@ -6,6 +6,7 @@
 // ------------------------------------------
 
 using lesClasses;
+using LesClasses;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -25,6 +26,8 @@ namespace GSB {
         public static List<Visite> mesVisites = new List<Visite>();
         public static List<Praticien> mesPraticiens = new List<Praticien>();
 
+
+        public static List<Presentation> lesPresentations = new List<Presentation>();
         // FormulaireParent : Pointe le formulaire de connexion qui doit rester ouvert (caché) afin de pouvoir l'afficher quant le visiteur se déconnecte 
         public static Form formulaireConnexion = null;
 

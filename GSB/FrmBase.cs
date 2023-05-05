@@ -122,6 +122,13 @@ namespace GSB {
            
         }
 
+        //
+        private void inscriptionPrésentationToolStripMenuItem_Click(object sender, EventArgs e) {
+            FrmPresentation unFrmPresentation = new FrmPresentation();
+            unFrmPresentation.Show();
+            Close();
+        }
+
         #endregion
 
         #region procédure
@@ -143,8 +150,9 @@ namespace GSB {
 
         }
 
+
         #endregion
 
-
+        
     }
 }

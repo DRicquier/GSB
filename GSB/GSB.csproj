@@ -127,6 +127,12 @@
     <Compile Include="FrmListeVisite.Designer.cs">
       <DependentUpon>FrmListeVisite.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPresentation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPresentation.Designer.cs">
+      <DependentUpon>FrmPresentation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Passerelle.cs" />
     <Compile Include="Program.cs" />
@@ -166,6 +172,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmListeVisite.resx">
       <DependentUpon>FrmListeVisite.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPresentation.resx">
+      <DependentUpon>FrmPresentation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
